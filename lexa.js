@@ -2,6 +2,7 @@
 require("dotenv").config();
 const Spotify = require('node-spotify-api');
 const axios = require("axios");
+const moment = require('moment');
 
 //getting keys to enable spotify search
 const keys = require('./keys.js');
@@ -22,17 +23,20 @@ console.log (command,searchTerm);
 switch (command){
     case "spotify-this":
         console.log("spotify");
+        queryUrl = "gi"
         break;
     case "concert-this":
         queryUrl = "https://rest.bandsintown.com/artists/" + searchTerm + "/events?app_id=codingbootcamp";
         axios.get(queryUrl).then(function(response){
             //TODO format the TIME#####################################################################################################################
             response.data.forEach(function(gig){
+                let date = gig.datetime.split("T");
+                let formatedDate = moment(date[0]).format("MM/DD/YYYY");
                 let venue = gig.venue
                 console.log(`
 Venue name: ${venue.name}
 Location:   ${venue.city}, ${venue.region}, ${venue.country}
-Date of show: ${gig.datetime} 
+Date of show: ${formatedDate} 
                 `)
             });
         });
