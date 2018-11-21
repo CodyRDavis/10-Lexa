@@ -14,9 +14,9 @@ is what function the user wants to run, and then what ever the user wants to sea
 * do-what-it-says [no input](runs a command saved in a text file)
 
 ## Requirements:
-### the following will need to be installed.
+run npm install to automatically install necessary files, with the exception being node.js
 >npm install
-### the following should be installed when after runningThe npm install
+### required
 * axios
 * node-spotify-api
 * moment
