@@ -38,7 +38,11 @@ function lexaBrain (service, search) {
             spotify.search({ 
                 type: 'track', query: spotifySearch, limit: 5
             }).then(function(response) {
-               
+
+                //checking to see if any items in response, if none let user know
+                if(response.track.items.length===0){
+                    console.log("No song by that name found.")
+                }
                 //each song sent back, we print out the info for it.
                 response.tracks.items.forEach(function(result){
                     console.log();
@@ -59,6 +63,10 @@ function lexaBrain (service, search) {
             //using axios to call out to bandsintown and get back results
             queryUrl = "https://rest.bandsintown.com/artists/" + search + "/events?app_id=codingbootcamp";
             axios.get(queryUrl).then(function(response){
+
+                if(response.data.length === 0){
+                    console.log ("No band by that name found.");
+                }
 
                 //for each gig a band has, print out the info
                 response.data.forEach(function(gig){
@@ -82,6 +90,9 @@ function lexaBrain (service, search) {
             queryUrl = "http://www.omdbapi.com/?t=" + search + "&y=&plot=short&apikey=trilogy";
             axios.get(queryUrl).then(function(response) {
                 let movie = response.data
+                if (movie.length === 0){
+                    console.log("No movie by that name found");
+                }
                 console.log(`
     Movie Title:  ${movie.Title}
     Release Date: ${movie.Released}
