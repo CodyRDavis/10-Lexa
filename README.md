@@ -29,6 +29,13 @@ run npm install to automatically install necessary files, with the exception bei
 * moment
 * dotenv
 
+## Screen-shots
+![screenshot](https://github.com/CodyRDavis/10-Lexa/blob/master/images/Screen%20Shot%202018-11-20%20at%207.43.13%20PM.png?raw=true)
+![screenshot](https://github.com/CodyRDavis/10-Lexa/blob/master/images/Screen%20Shot%202018-11-20%20at%207.43.45%20PM.png?raw=true)
+![screenshot](https://github.com/CodyRDavis/10-Lexa/blob/master/images/Screen%20Shot%202018-11-20%20at%207.45.10%20PM.png?raw=true)
+![screenshot](https://github.com/CodyRDavis/10-Lexa/blob/master/images/Screen%20Shot%202018-11-20%20at%207.47.17%20PM.png?raw=true)
+
+
 ## Breakdown:
 when the user runs the file and passes it the arguments outline in description, the first argument is used on a switch statement
 this selects which lines of code to run for the desired outcome. I could have broken each case statement to simply run a function, but I opted not to do that.
