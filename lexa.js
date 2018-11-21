@@ -32,6 +32,8 @@ switch (command){
         spotify.search({ 
             type: 'track', query: spotifySearch, limit: 5
         }).then(function(response) {
+
+            //checking to see if any responses came back. if none, let the user know.
             if(response.items.length === 0){
                 console.log("No songs by that title found.")
             }
@@ -93,6 +95,9 @@ Actors:       ${movie.Actors}
         .catch(function(err){
             console.log("No movies by that name found");
         });
+        break;
+    case "do-what-it-says":
+        console.log("FreeStyle huh?...lets see....")
         break;
     default:
         console.log("I havent been programmed to do that yet...");
