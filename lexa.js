@@ -62,7 +62,7 @@ function lexaBrain (service, search) {
         case "concert-this":
             //using axios to call out to bandsintown and get back results
             queryUrl = "https://rest.bandsintown.com/artists/" + search + "/events?app_id=codingbootcamp";
-            axios.get(queryUrl).then(function(response){
+            axios.get(queryUrl.replace("+", " ")).then(function(response){
 
                 if(response.data.length === 0){
                     console.log ("No band by that name found.");
